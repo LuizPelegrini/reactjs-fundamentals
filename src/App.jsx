@@ -12,15 +12,15 @@ export function App() {
       <div className={styles.wrapper}>
         <Sidebar />
         <main>
-        <Post
-          author="Luiz"
-          content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ipsam suscipit quos repellendus qui velit fugit, doloremque animi a corporis labore hic vel voluptatum incidunt tenetur sed nisi debitis molestiae!"
-        />
-    
-        <Post
-          author="Guilherme"
-          content="Another Post content"
-        />
+          <Post
+            author="Luiz"
+            content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ipsam suscipit quos repellendus qui velit fugit, doloremque animi a corporis labore hic vel voluptatum incidunt tenetur sed nisi debitis molestiae!"
+          />
+          
+          <Post
+            author="Luiz"
+            content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ipsam suscipit quos repellendus qui velit fugit, doloremque animi a corporis labore hic vel voluptatum incidunt tenetur sed nisi debitis molestiae!"
+          />
         </main>
       </div>
     </div>
