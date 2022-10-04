@@ -122,3 +122,7 @@
 .commentForm button[type=submit]:focus {
   outline: 2px solid var(--green-700);
 }
+
+.commentList {
+  margin-top: 2rem;
+}
