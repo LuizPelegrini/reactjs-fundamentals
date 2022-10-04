@@ -24,6 +24,15 @@ export function Post() {
         <p>👉 <a href="">luiz.design/doctorcare</a></p>
         <p><a href="">#newproject</a> <a href="">#react</a> <a href="">#neverstoplearning</a></p>
       </div>
+
+      <form className={styles.commentForm}>
+        <strong>Give your feedback</strong>
+        <textarea placeholder="Leave your comment" />
+        
+        <footer>
+          <button type="submit">Comment</button>
+        </footer>
+      </form>
     </article>
   );
 }
