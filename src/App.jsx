@@ -13,8 +13,8 @@ const posts = [
       role: 'Fullstack Dev. @BFM 89.9'
     },
     content: [
-      { type: 'paragraph', content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ipsam suscipit quos repellendus qui velit fugit, doloremque animi a corporis labore hic vel voluptatum incidunt tenetur sed nisi debitis molestiae!'},
-      { type: 'paragraph', content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ipsam suscipit quos repellendus qui velit fugit, doloremque animi a corporis labore hic vel voluptatum incidunt tenetur sed nisi debitis molestiae!'},
+      { type: 'paragraph', content: 'Hi folks 👋'},
+      { type: 'paragraph', content: 'I\'ve just finished pushing another project to my portfolio. It\'s called DoctorCare 🚀. Feel free to check it out and drop a comment down below!'},
       { type: 'link', content: 'jane.design/doctorcare' },
     ],
     publishedAt: new Date('2022-10-07 22:00:00')
@@ -27,11 +27,11 @@ const posts = [
       role: 'Solutions Engineer @Strapi'
     },
     content: [
-      { type: 'paragraph', content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ipsam suscipit quos repellendus qui velit fugit, doloremque animi a corporis labore hic vel voluptatum incidunt tenetur sed nisi debitis molestiae!'},
+      { type: 'paragraph', content: 'To infinity and beyond! 🚀'},
       { type: 'paragraph', content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ipsam suscipit quos repellendus qui velit fugit, doloremque animi a corporis labore hic vel voluptatum incidunt tenetur sed nisi debitis molestiae!'},
       { type: 'link', content: 'jane.design/doctorcare' },
     ],
-    publishedAt: new Date('2022-10-07 16:00:00')
+    publishedAt: new Date('2022-10-02 16:00:00')
   }
 ];
 

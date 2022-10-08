@@ -1,8 +1,16 @@
+import { format, formatDistanceToNow } from 'date-fns';
+
 import styles from './styles.module.css';
 import { Comment } from '../Comment';
 import { Avatar } from '../Avatar';
 
 export function Post({ author, content, publishedAt }) {
+  // format publish date
+  const publishedAtFormatted = format(publishedAt, "dd LLLL 'at' HH:mm'h'");
+
+  const publishedDateRelativeToNow = formatDistanceToNow(publishedAt, {
+    addSuffix: true
+  });
   return (
     <article className={styles.container}>
       <header className={styles.header}>
@@ -13,18 +21,21 @@ export function Post({ author, content, publishedAt }) {
         </div>
         <time
           className={styles.publishedDate}
-          title="29 September 2022 at 9pm"
-          dateTime={publishedAt.toString()}
+          title={publishedAtFormatted}
+          dateTime={publishedAt.toISOString()}
         >
-          Published 1h ago
+          { publishedDateRelativeToNow }
         </time>
       </header>
 
       <div className={styles.content}>
-        <p>Hi folks 👋</p>
-        <p>I've just finished pushing another project to my portfolio. It's called DoctorCare 🚀. Feel free to check it out and drop a comment down below! </p>
-        <p>👉 <a href="">luiz.design/doctorcare</a></p>
-        <p><a href="">#newproject</a> <a href="">#react</a> <a href="">#neverstoplearning</a></p>
+        {content.map(item => {
+          if(item.type === 'paragraph')
+            return <p>{item.content}</p>
+
+          if(item.type === 'link')
+            return <p><a href='#'>{item.content}</a></p>
+        })}
       </div>
 
       <form className={styles.commentForm}>
