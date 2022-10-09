@@ -25,8 +25,16 @@ export function Post({ author, content, publishedAt }) {
 
   // updates text value in textarea element
   function handleNewCommentText (event) {
-    const text = event.target.value;
-    setNewCommentText(text);
+    const target = event.target;
+    setNewCommentText(target.value);
+
+    // remove invalid field message, to prevent the situation where the user attempts to submit an empty comment, but then types something (newCommentText is no longer empty) and submit again
+    target.setCustomValidity('');
+  }
+
+  // customize invalid field message
+  function handleNewInvalidComment(event) {
+    event.target.setCustomValidity('Comment is empty');
   }
 
   function deleteComment(commentToDelete){
@@ -67,10 +75,17 @@ export function Post({ author, content, publishedAt }) {
           placeholder="Leave your comment"
           onChange={handleNewCommentText}
           value={newCommentText}
+          required
+          onInvalid={handleNewInvalidComment}
         />
         
         <footer>
-          <button type="submit">Comment</button>
+          <button
+            type="submit"
+            disabled={!newCommentText}
+          >
+            Comment
+          </button>
         </footer>
       </form>
 
