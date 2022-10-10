@@ -6,21 +6,21 @@
 
 
 ## About
-Training my skills with a React project where the user is able to see a set of posts, comment on each one of them and add unlimited likes to different comments;
+Training my skills with a React project where the user is able to see a set of posts, comment on each one of them and add unlimited likes to different comments.
 
 
-## Live project
+## ✨ Live project
 <a href="https://luizpelegrini.github.io/reactjs-fundamentals/" target="_blank">https://luizpelegrini.github.io/reactjs-fundamentals</a>
 
 <br />
 
-### What I learn
+### 🧑‍💻 What I learn
 * Using CSS Modules in React.
 * Why React uses the concept of <b>immutability</b> when handling component state.
 * Why the attribute `key` is needed when displaying a list of components, and why the array index is not a good candidate for it.
 * HTML tag `<time>` and its attributes.
 * `date-fns` package for handling dates in Javascript
-* Deploying project using `gh-pages` package
+* Deploying project to Github using `gh-pages` package
 
 <br />
 
@@ -32,14 +32,14 @@ Training my skills with a React project where the user is able to see a set of p
     <b>Mobile</b>
 </p>
 <p align="center">
-  <img src="./screenshots/screenshot_mobile.png" height="300"/>
+  <img src="./screenshots/screenshot_mobile.png" height="500"/>
 </p>
 
 <p align="center">
     <b>Desktop</b>
 </p>
 <p align="center">
-    <img src="./screenshots/screenshot_desktop.png" height="300"/>
+    <img src="./screenshots/screenshot_desktop.png" height="500"/>
 </p>
 
 <br />
