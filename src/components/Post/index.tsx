@@ -3,10 +3,27 @@ import { format, formatDistanceToNow } from 'date-fns';
 import styles from './styles.module.css';
 import { Comment } from '../Comment';
 import { Avatar } from '../Avatar';
-import { useState } from 'react';
+import { useState, FormEvent, ChangeEvent, InvalidEvent } from 'react';
 
-export function Post({ author, content, publishedAt }) {
-  const [comments, setComments] = useState([]);
+interface Author {
+  name: string;
+  role: string;
+  avatarUrl: string;
+}
+
+interface Content {
+  type: 'paragraph' | 'link';
+  content: string;
+}
+
+interface PostProps {
+  author: Author;
+  content: Content[];
+  publishedAt: Date;
+}
+
+export function Post({ author, content, publishedAt }: PostProps) {
+  const [comments, setComments] = useState<string[]>([]);
   const [newCommentText, setNewCommentText] = useState('');
 
   // format publish date
@@ -17,14 +34,14 @@ export function Post({ author, content, publishedAt }) {
     addSuffix: true
   });
 
-  function handleCreateNewComment(event) {
+  function handleCreateNewComment(event: FormEvent) {
     event.preventDefault();
     setComments([...comments, newCommentText]);
     setNewCommentText(''); // clear textarea
   }
 
   // updates text value in textarea element
-  function handleNewCommentText (event) {
+  function handleNewCommentText (event: ChangeEvent<HTMLTextAreaElement>) {
     const target = event.target;
     setNewCommentText(target.value);
 
@@ -33,11 +50,11 @@ export function Post({ author, content, publishedAt }) {
   }
 
   // customize invalid field message
-  function handleNewInvalidComment(event) {
+  function handleNewInvalidComment(event: InvalidEvent<HTMLTextAreaElement>) {
     event.target.setCustomValidity('Comment is empty');
   }
 
-  function deleteComment(commentToDelete){
+  function deleteComment(commentToDelete: string){
     const commentsWithoutDeletedOne = comments.filter(comment => comment !== commentToDelete);
     setComments(commentsWithoutDeletedOne);
   }
@@ -45,7 +62,7 @@ export function Post({ author, content, publishedAt }) {
   return (
     <article className={styles.container}>
       <header className={styles.header}>
-        <Avatar imgSrc={author.avatarUrl} />
+        <Avatar imgSrc={author.avatarUrl} alt=""/>
         <div className={styles.authorInfo}>
           <strong className={styles.authorName}>{ author.name }</strong>
           <span className={styles.authorRole}>{ author.role }</span>

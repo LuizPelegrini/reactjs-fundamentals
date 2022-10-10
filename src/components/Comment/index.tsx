@@ -3,7 +3,12 @@ import { Avatar } from '../Avatar';
 import styles from './styles.module.css';
 import { useState } from 'react';
 
-export function Comment({ content, onDeleteComment }) {
+interface CommentProps {
+  content: string;
+  onDeleteComment: (comment: string) => void;
+}
+
+export function Comment({ content, onDeleteComment }: CommentProps) {
   const [likeCount, setLikeCount] = useState(0);
 
   function handleDeleteComment() {
@@ -11,7 +16,10 @@ export function Comment({ content, onDeleteComment }) {
   }
 
   function handleNewLikeCount(){
-    setLikeCount(likeCount + 1);
+    // just a pattern. When we need the previous state value to update to a new value, it's recommended to use a function as argument
+    setLikeCount((value) => {
+      return value + 1;
+    });
   }
   
   return (
